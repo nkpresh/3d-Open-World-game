@@ -20,7 +20,7 @@ public class CharacterAnimationController : MonoBehaviour
             Debug.LogWarning("No valid Animator");
             return;
         }
-        Debug.Log(character.getVelocity());
+        // Debug.Log(character.getVelocity());
         animator.SetFloat("Velocity", character.getVelocity());
     }
 }
