@@ -46,6 +46,17 @@ public class Character : MonoBehaviour
     }
     public float getVelocity()
     {
-        return velocity.magnitude;
+        return characterMovement.Velocity.magnitude;
+    }
+    public void ToggleRun()
+    {
+        if (characterMovement.GetMovementMode() != MovementMode.Running)
+        {
+            characterMovement.SetMovementMode(MovementMode.Running);
+        }
+        else
+        {
+            characterMovement.SetMovementMode(MovementMode.Walking);
+        }
     }
 }
