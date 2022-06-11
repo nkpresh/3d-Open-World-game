@@ -59,4 +59,8 @@ public class Character : MonoBehaviour
             characterMovement.SetMovementMode(MovementMode.Walking);
         }
     }
+
+    public void ToggleCrouching(){
+        
+    }
 }

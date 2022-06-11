@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 velocity;
     public float maxSpeed = 10f;
     private float smoothSpeed;
+    private float smoothRotation = 10;
+
     private Rigidbody rigidbody;
     private MovementMode movementMode;
     public Vector3 Velocity { get => rigidbody.velocity; set => velocity = value; }
@@ -34,9 +36,11 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log(velocity * maxSpeed);
         if (velocity.magnitude > 0)
         {
-            rigidbody.velocity = new Vector3(velocity.normalized.x* smoothSpeed, rigidbody.velocity.y, velocity.normalized.z* smoothSpeed);
+            rigidbody.velocity = new Vector3(velocity.normalized.x * smoothSpeed, rigidbody.velocity.y, velocity.normalized.z * smoothSpeed);
             smoothSpeed = Mathf.Lerp(smoothSpeed, maxSpeed, Time.deltaTime);
-            t_mesh.rotation = Quaternion.LookRotation(velocity, Vector3.up);
+            // t_mesh.rotation = Quaternion.LookRotation(velocity, Vector3.up);
+            t_mesh.rotation = Quaternion.Lerp(t_mesh.rotation, Quaternion.LookRotation(velocity, Vector3.up), Time.deltaTime*smoothRotation);
+
         }
         else
         {
@@ -57,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
                 }
             case MovementMode.Crouching:
                 {
-                    maxSpeed = 4;
+                    maxSpeed = 5;
                     break;
                 }
             case MovementMode.Running:
