@@ -61,6 +61,13 @@ public class Character : MonoBehaviour
     }
 
     public void ToggleCrouching(){
-        
+        if (characterMovement.GetMovementMode() != MovementMode.Crouching)
+        {
+            characterMovement.SetMovementMode(MovementMode.Crouching);
+        }
+        else
+        {
+            characterMovement.SetMovementMode(MovementMode.Crouching);
+        }
     }
 }
