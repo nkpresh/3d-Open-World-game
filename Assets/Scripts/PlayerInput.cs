@@ -15,10 +15,24 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        character.AddMovementInput(Input.GetAxis("Vertical"),Input.GetAxis("Horizontal"));
-        if(Input.GetKeyDown(KeyCode.CapsLock)){
+        character.AddMovementInput(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        if (Input.GetKeyDown(KeyCode.CapsLock))
+        {
             character.ToggleRun();
 
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            character.ToggleCrouch();
+
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            character.ToggleSprint(true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            character.ToggleSprint(false);
         }
     }
 }

@@ -17,7 +17,7 @@ public class CharacterAnimationController : MonoBehaviour
     {
         if (animator == null)
         {
-            Debug.LogWarning("No valid Animator");
+            // Debug.LogWarning("No valid Animator");
             return;
         }
         
@@ -56,7 +56,7 @@ public class CharacterAnimationController : MonoBehaviour
                 }
             case MovementMode.Sprinting:
                 {
-                    animator.SetInteger("Movement_State", 4);
+                    animator.SetInteger("Movement_State", 0);
                     break;
                 }
         }

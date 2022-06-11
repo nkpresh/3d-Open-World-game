@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
     {
         // transform.Translate(velocity.normalized*maxSpeed);
         // velocity = velocity.normalized * smoothSpeed;
-        Debug.Log(velocity * maxSpeed);
+        // Debug.Log(velocity * maxSpeed);
         if (velocity.magnitude > 0)
         {
             rigidbody.velocity = new Vector3(velocity.normalized.x * smoothSpeed, rigidbody.velocity.y, velocity.normalized.z * smoothSpeed);
@@ -56,17 +56,17 @@ public class CharacterMovement : MonoBehaviour
         {
             case MovementMode.Walking:
                 {
-                    maxSpeed = 3.333333f;
+                    maxSpeed = 5f;
                     break;
                 }
             case MovementMode.Crouching:
                 {
-                    maxSpeed = 5;
+                    maxSpeed = 5f;
                     break;
                 }
             case MovementMode.Running:
                 {
-                    maxSpeed = 10;
+                    maxSpeed = 10f;
                     break;
                 }
             case MovementMode.Proning:
@@ -81,7 +81,7 @@ public class CharacterMovement : MonoBehaviour
                 }
             case MovementMode.Sprinting:
                 {
-                    maxSpeed = 14;
+                    maxSpeed = 15;
                     break;
                 }
         }

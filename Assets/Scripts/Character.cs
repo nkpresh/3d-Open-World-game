@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
 
     public CameraController cameraController;
     public CharacterMovement characterMovement;
+    public CharacterAnimationController characterAnimation;
     void Start()
     {
 
@@ -32,7 +33,7 @@ public class Character : MonoBehaviour
 
         Vector3 translation = forward * cameraController.transform.forward;
         translation += right * cameraController.transform.right;
-        
+
         if (translation.magnitude > 0)
         {
             velocity = translation;
@@ -42,7 +43,7 @@ public class Character : MonoBehaviour
             velocity = Vector3.zero;
         }
         translation.y = 0;
-        characterMovement.Velocity=translation;
+        characterMovement.Velocity = translation;
     }
     public float getVelocity()
     {
@@ -53,21 +54,40 @@ public class Character : MonoBehaviour
         if (characterMovement.GetMovementMode() != MovementMode.Running)
         {
             characterMovement.SetMovementMode(MovementMode.Running);
+            characterAnimation.SetMovementMode(MovementMode.Running);
         }
         else
         {
             characterMovement.SetMovementMode(MovementMode.Walking);
+            characterAnimation.SetMovementMode(MovementMode.Walking);
         }
     }
 
-    public void ToggleCrouching(){
+    public void ToggleCrouch()
+    {
         if (characterMovement.GetMovementMode() != MovementMode.Crouching)
         {
             characterMovement.SetMovementMode(MovementMode.Crouching);
+            characterAnimation.SetMovementMode(MovementMode.Crouching);
         }
         else
         {
-            characterMovement.SetMovementMode(MovementMode.Crouching);
+            characterMovement.SetMovementMode(MovementMode.Walking);
+            characterAnimation.SetMovementMode(MovementMode.Walking);
+        }
+    }
+
+    public void ToggleSprint(bool enable)
+    {
+        if (enable)
+        {
+            characterMovement.SetMovementMode(MovementMode.Sprinting);
+            characterAnimation.SetMovementMode(MovementMode.Sprinting);
+        }
+        else
+        {
+            characterMovement.SetMovementMode(MovementMode.Running);
+            characterAnimation.SetMovementMode(MovementMode.Running);
         }
     }
 }
