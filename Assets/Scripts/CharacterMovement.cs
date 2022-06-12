@@ -17,6 +17,9 @@ public class CharacterMovement : MonoBehaviour
     public Transform t_mesh;
     private Vector3 velocity;
     public float maxSpeed = 10f;
+
+    public float walkSpeed = 3.33f;
+
     private float smoothSpeed;
     private float smoothRotation = 10;
 
