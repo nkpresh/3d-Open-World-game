@@ -1048,6 +1048,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t_mesh: {fileID: 359594608}
   maxSpeed: 10
+  walkSpeed: 3.33
+  runSpeed: 6.7
+  sprintSpeed: 10
+  crouchSpeed: 3.33
+  proningSpeed: 1
+  swimSpeed: 3.33
 --- !u!54 &1851136622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1077,4 +1083,4 @@ CapsuleCollider:
   m_Radius: 0.6
   m_Height: 1.75
   m_Direction: 1
-  m_Center: {x: 0.35, y: -0.39, z: 0}
+  m_Center: {x: -0.01, y: -0.39, z: 0}

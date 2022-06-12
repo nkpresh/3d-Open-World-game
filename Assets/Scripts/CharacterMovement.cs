@@ -19,6 +19,14 @@ public class CharacterMovement : MonoBehaviour
     public float maxSpeed = 10f;
 
     public float walkSpeed = 3.33f;
+    public float runSpeed = 6.7f;
+    public float sprintSpeed = 10f;
+    public float crouchSpeed = 3.33f;
+    public float proningSpeed = 1f;
+    public float swimSpeed = 3.33f;
+
+
+
 
     private float smoothSpeed;
     private float smoothRotation = 10;
@@ -59,32 +67,32 @@ public class CharacterMovement : MonoBehaviour
         {
             case MovementMode.Walking:
                 {
-                    maxSpeed = 5f;
+                    maxSpeed = walkSpeed;
                     break;
                 }
             case MovementMode.Crouching:
                 {
-                    maxSpeed = 5f;
+                    maxSpeed = crouchSpeed;
                     break;
                 }
             case MovementMode.Running:
                 {
-                    maxSpeed = 10f;
+                    maxSpeed = runSpeed;
                     break;
                 }
             case MovementMode.Proning:
                 {
-                    maxSpeed = 2;
+                    maxSpeed = proningSpeed;
                     break;
                 }
             case MovementMode.Swimming:
                 {
-                    maxSpeed = 5;
+                    maxSpeed = swimSpeed;
                     break;
                 }
             case MovementMode.Sprinting:
                 {
-                    maxSpeed = 15;
+                    maxSpeed = sprintSpeed;
                     break;
                 }
         }

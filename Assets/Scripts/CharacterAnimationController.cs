@@ -8,10 +8,13 @@ public class CharacterAnimationController : MonoBehaviour
 
     public Animator animator;
     private Character character;
+    private float speed;
 
     void Start()
     {
         character = this.GetComponent<Character>();
+
+        // Time.timeScale = .5f;
     }
     void Update()
     {
@@ -20,8 +23,8 @@ public class CharacterAnimationController : MonoBehaviour
             // Debug.LogWarning("No valid Animator");
             return;
         }
-        
-        animator.SetFloat("Velocity", character.getVelocity());
+        speed = Mathf.Lerp(speed, character.getVelocity(), Time.deltaTime * 2);
+        animator.SetFloat("Velocity", speed);
         // Debug.Log(character.getVelocity()); 
     }
 
