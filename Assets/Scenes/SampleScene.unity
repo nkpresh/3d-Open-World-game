@@ -1048,9 +1048,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t_mesh: {fileID: 359594608}
   maxSpeed: 10
-  walkSpeed: 3.33
-  runSpeed: 6.7
-  sprintSpeed: 10
+  walkSpeed: 2
+  runSpeed: 5
+  sprintSpeed: 7
   crouchSpeed: 3.33
   proningSpeed: 1
   swimSpeed: 3.33

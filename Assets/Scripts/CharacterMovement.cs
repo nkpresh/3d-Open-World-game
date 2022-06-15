@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        SetMovementMode(MovementMode.Walking);
     }
 
     void Update()
