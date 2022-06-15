@@ -23,7 +23,9 @@ public class CharacterAnimationController : MonoBehaviour
             // Debug.LogWarning("No valid Animator");
             return;
         }
-        speed = Mathf.Lerp(speed, character.getVelocity(), Time.deltaTime * 2);
+
+        speed = Mathf.SmoothStep(speed, character.getVelocity(), Time.deltaTime * 20);
+
         animator.SetFloat("Velocity", speed);
         // Debug.Log(character.getVelocity()); 
     }

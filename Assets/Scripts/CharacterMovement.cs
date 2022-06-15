@@ -43,8 +43,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        // transform.Translate(velocity.normalized*maxSpeed);
-        // velocity = velocity.normalized * smoothSpeed;
+        
         // Debug.Log(velocity * maxSpeed);
         if (velocity.magnitude > 0)
         {
