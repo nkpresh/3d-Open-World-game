@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class CharacterAnimationEvents : MonoBehaviour
         float actualSpeed = characterMovement.Velocity.magnitude;
         if (GetMovementState(targetWalkSpeed) == GetMovementState(actualSpeed))
         {
+            audio.pitch = Mathf.Clamp((actualSpeed / 5), .6f, 1.3f);
+            audio.volume = Mathf.Clamp(actualSpeed / 5, .3f, 1.5f);
             audio.PlayOneShot(aud_footStep);
         }
     }
