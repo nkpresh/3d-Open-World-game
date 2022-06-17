@@ -38143,13 +38143,13 @@ AnimationClip:
     functionName: FootStep
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 5
     intParameter: 0
     messageOptions: 0
   - time: 0.6
     functionName: FootStep
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 5
     intParameter: 0
     messageOptions: 0

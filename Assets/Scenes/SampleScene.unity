@@ -504,6 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aud_footStep: {fileID: 8300000, guid: f4eb0a209807fbb40bd0759085f6f882, type: 3}
   audio: {fileID: 1851136624}
+  characterMovement: {fileID: 1851136621}
 --- !u!95 &481666385 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: dce98896e27ea3c4fac4598df24b8a64,
@@ -1072,7 +1073,7 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 5
   sprintSpeed: 7
-  crouchSpeed: 3.33
+  crouchSpeed: 2
   proningSpeed: 1
   swimSpeed: 3.33
 --- !u!54 &1851136622
